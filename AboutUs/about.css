@@ -1,0 +1,67 @@
+body{
+    font-family: Montserrat;
+    background-color: #20b2aa;
+}
+
+p{
+    font-size: large;
+    font-weight: 700;
+    color: #001A6E;
+}
+.hero {
+    background: url('penguin.png') center/cover;
+    text-align: center;
+    padding: 60px 20px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mission, .features, .cta {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.feature-list {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.feature {
+    background: #E1FFBB;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 300px;
+    border: 2px solid black;
+    
+}
+
+.btn {
+    background: #007bff;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.btn-secondary {
+    background: #6c757d;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+.tempo{
+    background-color: #E1FFBB;
+    width: 500px;
+}
+h1{
+    color: black;
+    padding-top: 8px;
+}
+.tempo p{
+    padding-bottom: 8px;
+}
