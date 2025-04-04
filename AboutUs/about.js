@@ -1,19 +1,12 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const elements = document.querySelectorAll(".feature");
-    elements.forEach(el => {
-        el.style.opacity = 0;
-        el.style.transform = "translateY(20px)";
+gsap.utils.toArray("section").forEach(section => {
+    gsap.to(section, {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        scrollTrigger: {
+            trigger: section,
+            start: "top 80%",
+            toggleActions: "play none none none"
+        }
     });
-
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = 1;
-                entry.target.style.transform = "translateY(0)";
-                entry.target.style.transition = "all 0.5s ease-out";
-            }
-        });
-    });
-
-    elements.forEach(el => observer.observe(el));
 });
