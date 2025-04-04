@@ -3,265 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modern Forum Navbar</title>
+    <title>Open Forum</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --bg-color: #ffffff;
-            --text-color: #333333;
-            --primary-color: #4f46e5;
-            --primary-hover: #4338ca;
-            --secondary-bg: #f3f4f6;
-            --border-color: #e5e7eb;
-            --shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-        }
-
-        .dark {
-            --bg-color: #1a1a1a;
-            --text-color: #f3f4f6;
-            --primary-color: #6366f1;
-            --primary-hover: #4f46e5;
-            --secondary-bg: #2d2d2d;
-            --border-color: #3d3d3d;
-            --shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-        }
-
         body {
             margin: 0;
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
+            font-family: 'Poppins', sans-serif;
             transition: background-color 0.3s ease, color 0.3s ease;
-        }
-
-        nav {
-            position: sticky;
-            top: 0;
-            z-index: 50;
-            background-color: var(--bg-color);
-            border-bottom: 1px solid var(--border-color);
-            box-shadow: var(--shadow);
-            padding: 0.75rem 1.5rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: all 0.3s ease;
-        }
-
-        .nav-container {
-            width: 100%;
-            max-width: 1280px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--primary-color);
-        }
-
-        .nav-links {
-            display: none;
-        }
-
-        .nav-link {
-            color: var(--text-color);
-            text-decoration: none;
-            font-weight: 500;
-            position: relative;
-            padding: 0.5rem 0;
-            margin: 0 1rem;
-            transition: color 0.2s ease;
-        }
-
-        .nav-link:hover {
-            color: var(--primary-color);
-        }
-
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background-color: var(--primary-color);
-            transition: width 0.3s ease;
-        }
-
-        .nav-link:hover::after {
-            width: 100%;
-        }
-
-        .nav-right {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .auth-buttons {
-            display: none;
-        }
-
-        .auth-btn {
-            padding: 0.5rem 1rem;
-            border-radius: 0.375rem;
-            font-weight: 500;
-            text-decoration: none;
-            transition: all 0.2s ease;
-        }
-
-        .login {
-            color: var(--primary-color);
-            border: 1px solid var(--primary-color);
-        }
-
-        .login:hover {
-            background-color: rgba(79, 70, 229, 0.1);
-        }
-
-        .signup {
-            background-color: var(--primary-color);
-            color: white;
-        }
-
-        .signup:hover {
-            background-color: var(--primary-hover);
-        }
-
-        .theme-toggle {
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 0.5rem;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-color);
-            transition: all 0.2s ease;
-        }
-
-        .theme-toggle:hover {
-            background-color: var(--secondary-bg);
-        }
-
-        .theme-icon {
-            width: 20px;
-            height: 20px;
-        }
-
-        .mobile-menu-btn {
-            display: block;
-            background: none;
-            border: none;
-            padding: 0.5rem;
-            border-radius: 0.25rem;
-            color: var(--text-color);
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-
-        .mobile-menu-btn:hover {
-            background-color: var(--secondary-bg);
-        }
-
-        .mobile-menu-icon {
-            width: 24px;
-            height: 24px;
-            stroke: currentColor;
-        }
-
-        @media (min-width: 768px) {
-            .nav-links {
-                display: flex;
-            }
-            
-            .auth-buttons {
-                display: flex;
-                gap: 0.75rem;
-            }
-
-            .mobile-menu-btn {
-                display: none;
-            }
         }
     </style>
 </head>
-<body>
-    <nav>
-        <div class="nav-container">
-            <div class="logo">Open Forum</div>
-
-            <div class="nav-links">
-                <a href="/dashboard" class="nav-link">Dashboard</a>
-                <a href="/categories" class="nav-link">Categories</a>
-                <a href="/profile" class="nav-link">Profile</a>
-            </div>
-
-            <div class="nav-right">
-                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
-                    <svg id="theme-toggle-dark-icon" class="theme-icon" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
-                    </svg>
-                    <svg id="theme-toggle-light-icon" class="theme-icon" fill="currentColor" viewBox="0 0 20 20" style="display: none;">
-                        <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
-                    </svg>
-                </button>
-
-                <div class="auth-buttons">
-                    <a href="/auth/login" class="auth-btn login">Login</a>
-                    <a href="/auth/signup" class="auth-btn signup">Sign Up</a>
-                </div>
-
-                <button class="mobile-menu-btn" aria-label="Open menu">
-                    <svg class="mobile-menu-icon" fill="none" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                </button>
-            </div>
+<body class="bg-white text-gray-900">
+    <nav class="sticky top-0 z-50 bg-white border-b border-gray-200 shadow-md p-4 flex justify-between items-center">
+        <div class="text-blue-500 text-2xl font-bold">Open Forum</div>
+        <div class="flex gap-4">
+            <a href="#" class="text-blue-500 font-medium hover:underline">Dashboard</a>
+            <a href="#" class="text-blue-500 font-medium hover:underline">Categories</a>
+            <a href="#" class="text-blue-500 font-medium hover:underline">Profile</a>
+        </div>
+        <div class="flex gap-4">
+            <a href="#" class="text-blue-500 border border-blue-500 px-4 py-2 rounded-md font-medium hover:bg-blue-100">Login</a>
+            <a href="#" class="bg-blue-500 text-white px-4 py-2 rounded-md font-medium hover:bg-blue-600">Sign Up</a>
         </div>
     </nav>
-
-    <script>
-        // Theme toggle functionality
-        const themeToggle = document.getElementById('theme-toggle');
-        const darkIcon = document.getElementById('theme-toggle-dark-icon');
-        const lightIcon = document.getElementById('theme-toggle-light-icon');
-
-        // Check for saved user preference or use system preference
-        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-            document.documentElement.classList.add('dark');
-            darkIcon.style.display = 'none';
-            lightIcon.style.display = 'block';
-        } else {
-            document.documentElement.classList.remove('dark');
-            darkIcon.style.display = 'block';
-            lightIcon.style.display = 'none';
-        }
-
-        // Toggle between light and dark mode
-        themeToggle.addEventListener('click', () => {
-            // Toggle icons
-            if (darkIcon.style.display === 'none') {
-                darkIcon.style.display = 'block';
-                lightIcon.style.display = 'none';
-            } else {
-                darkIcon.style.display = 'none';
-                lightIcon.style.display = 'block';
-            }
-            
-            // Toggle dark class and save preference
-            if (document.documentElement.classList.contains('dark')) {
-                document.documentElement.classList.remove('dark');
-                localStorage.setItem('color-theme', 'light');
-            } else {
-                document.documentElement.classList.add('dark');
-                localStorage.setItem('color-theme', 'dark');
-            }
-        });
-    </script>
 </body>
 </html>
