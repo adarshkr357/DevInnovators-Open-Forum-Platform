@@ -1,12 +1,19 @@
+<<<<<<< HEAD
 require('dotenv').config();
 const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
 const client = require('./config/database');
+=======
+const express = require("express");
+const path = require("path");
+require("dotenv").config();
+>>>>>>> 5d20a3cf83bfee13da122b1e5107053820981dae
 
 const app = express();
 
 // Middleware
+<<<<<<< HEAD
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
@@ -49,3 +56,28 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`🚀 Server running on http://localhost:${PORT}`);
 });
+=======
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+// Serve static files (CSS, JS, images, etc.)
+app.use(express.static(path.join(__dirname, "public")));
+
+// Serve Home Page (HTML)
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "views", "index.html"));
+});
+
+// Serve Navbar (Partial)
+app.get("/partials/navbar", (req, res) => {
+  res.sendFile(path.join(__dirname, "views", "partials", "navbar.html"));
+});
+
+// Serve Login Page
+app.get("/auth/login", (req, res) => {
+  res.sendFile(path.join(__dirname, "views", "auth", "login.html"));
+});
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log(`🚀 Server running on http://localhost:${PORT}`));
+>>>>>>> 5d20a3cf83bfee13da122b1e5107053820981dae
