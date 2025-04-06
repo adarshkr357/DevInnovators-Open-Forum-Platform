@@ -12,6 +12,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Serve HTML pages
 app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'views', 'index.html'));
+});
+
+app.get('/register', (req, res) => {
   res.sendFile(path.join(__dirname, 'views', 'register.html'));
 });
 
