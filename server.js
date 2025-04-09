@@ -27,6 +27,10 @@ app.get('/auth/login', (req, res) => {
   res.sendFile(path.join(__dirname, 'views', 'auth', 'login.html'));
 });
 
+app.get('/profile', (req, res) => {
+  res.sendFile(path.join(__dirname , 'views', 'profile.html'));
+});
+
 // Handle POST request
 app.post('/register', async (req, res) => {
   const { name, email, password } = req.body;
@@ -52,6 +56,8 @@ app.use(express.urlencoded({ extended: true }));
 
 // Serve static files (CSS, JS, images, etc.)
 app.use(express.static(path.join(__dirname, "public")));
+
+app.use('/api/profile', require('./routes/profile'));
 
 // Serve Home Page (HTML)
 app.get("/", (req, res) => {
