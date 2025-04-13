@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Email</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&display=swap" />
+  <link href="https://fonts.googleapis.com/css2?family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
+  <style>
+     .logo-text {
+    font-family: 'Winky Sans', sans-serif;
+    font-size: 2rem;
+  }
+
+  .navbar-lora {
+    font-family: 'Lora', serif;
+    font-weight: 700; /* Makes Lora bold */
+  }
+
+  .navbar-lora .nav-link,
+  .navbar-lora .dropdown-item,
+  .navbar-lora .btn {
+    font-weight: 700; /* Ensure links, dropdowns, and buttons are bold */
+  }
+    body {
+      background-color: #f9f9f9;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .settings-wrapper {
+      display: flex;
+      min-height: 100vh;
+    }
+
+    .sidebar {
+      width: 260px;
+      background-color: #fff;
+      border-right: 1px solid #ddd;
+      padding: 2rem 1rem;
+    }
+
+    .sidebar h6 {
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .sidebar a {
+      display: block;
+      padding: 0.6rem 0;
+      color: #333;
+      font-weight: 500;
+      text-decoration: none;
+    }
+
+    .sidebar a.active,
+    .sidebar a:hover {
+      color: #0d6efd;
+    }
+
+    .settings-content {
+      flex-grow: 1;
+      padding: 2rem;
+    }
+
+    .settings-content h4 {
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+    }
+
+    .form-label {
+      font-weight: 600;
+    }
+
+    .form-control {
+      border-radius: 0.3rem;
+    }
+
+    .is-invalid {
+      border-color: red !important;
+    }
+
+    @media (max-width: 768px) {
+      .settings-wrapper {
+        flex-direction: column;
+      }
+
+      .sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #ddd;
+      }
+    }
+    body.light-mode {
+  background-color: #f9f9f9;
+  color: #000;
+}
+
+body.dark-mode {
+  background-color: #121212;
+  color: #fff;
+}
+
+.dark-mode .navbar,
+.dark-mode .sidebar,
+.dark-mode .settings-content {
+  background-color: #1f1f1f !important;
+  color: #fff;
+  border-color: #444;
+}
+
+.dark-mode .form-control,
+.dark-mode .form-select {
+  background-color: #2a2a2a;
+  color: #fff;
+  border-color: #555;
+}
+
+.dark-mode .form-control::placeholder {
+  color: #ccc;
+}
+
+.dark-mode .sidebar a {
+  color: #ccc;
+}
+
+.dark-mode .sidebar a.active,
+.dark-mode .sidebar a:hover {
+  color: #0d6efd;
+}
+.dark-mode .navbar,
+.dark-mode .navbar a,
+.dark-mode .navbar .nav-link,
+.dark-mode .navbar .navbar-brand,
+.dark-mode .navbar .dropdown-menu {
+  color: #fff !important;
+}
+
+.dark-mode .navbar .dropdown-menu {
+  background-color: #2a2a2a;
+}
+
+.dark-mode .dropdown-item {
+  color: #fff;
+}
+
+.dark-mode .dropdown-item:hover {
+  background-color: #444;
+  color: #0d6efd;
+}
+.dark-mode footer {
+  background-color: #000 !important;
+  color: #fff;
+}
+
+.dark-mode footer p {
+  color: #fff !important;
+}
+
+  </style>
+</head>
+<body class="light-mode">
+
+<!-- NAVBAR -->
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg text fs-5 first-navbar bg-light">
+    <div class="container-fluid px-4">
+  
+      <!-- Left: Logo -->
+      <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="index.html">
+        <span class="logo-text fw-bold">Team 4</span>
+      </a>
+  
+      <!-- Toggler -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <!-- Right Side: CTA & Profile -->
+      <div class="collapse navbar-collapse justify-content-end" id="navbarContent">
+        <div class="d-flex align-items-center gap-3 ms-auto">
+  
+          <!-- Profile Dropdown -->
+          <div class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" role="button" data-bs-toggle="dropdown">
+              <span class="material-symbols-outlined" style="font-size: 32px;">account_circle</span>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end fs-6 custom-dropdown">
+              <li class="text-center">
+                <a class="dropdown-item fw-bold" href="#" style="font-size: 1.1rem;">Account</a>
+              </li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item fw-bold" href="settings.html">Settings</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item text-danger fw-bold" href="index.html">Logout</a></li>
+            </ul>
+          </div>
+  
+          <!-- Theme Toggle -->
+          <button class="btn btn-outline-light border-0" id="theme-toggle">
+            <span id="theme-icon">🌙</span>
+          </button>
+  
+        </div>
+      </div>
+    </div>
+  </nav>
+  
+
+<!-- Profile Settings -->
+<div class="settings-wrapper">
+  <div class="sidebar">
+    <h6>Settings</h6>
+    <a href="settings.html" class="active">Profile</a>
+    <a href="email.html" class="active">Email</a>
+    <a href="password.html" class="active">Password</a>
+    <a href="account.html" class="active">Account</a>
+  </div>
+
+  <div class="settings-content">
+    <h4>Email</h4>
+    <input type="text" class="form-control mb-3" id="firstName" placeholder="Enter your Email">
+    <input type="password" class="form-control mb-3" id="lastName" placeholder="Enter your Password">
+    <div class="text-end mt-4">
+      <button id="saveChangesBtn" class="btn btn-success px-4">Update Email-ID</button>
+    </div>
+  </div>
+</div>
+<hr>
+  <!-- FOOTER -->
+  <footer class="bg-white text-dark py-5" style="font-family: 'Lilita One', cursive;">
+    <div class="container text-center">
+      <p class="mb-1" style="font-size: 2.2rem; font-weight: 700;">© 2025 Team 4. All rights reserved.</p>
+      <p class="text-secondary" style="font-size: 1.6rem;">Made with ❤ by Team 4</p>
+    </div>
+  </footer>
+<!-- Bootstrap JS and Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Theme + Save Logic -->
+<script>
+    // THEME TOGGLE
+    const toggleButton = document.getElementById('theme-toggle');
+    const themeIcon = document.getElementById('theme-icon');
+  
+    toggleButton.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      document.body.classList.toggle('light-mode');
+      themeIcon.textContent = document.body.classList.contains('light-mode') ? '🌙' : '☀';
+    });
+  
+    // CLEAR localStorage ON PAGE LOAD
+    window.addEventListener('load', () => {
+      localStorage.removeItem('firstName');
+      localStorage.removeItem('lastName');
+    });
+  
+    // SAVE BUTTON LOGIC
+    const fields = ['firstName', 'lastName'];
+  
+    document.getElementById('saveChangesBtn').addEventListener('click', () => {
+      let isValid = true;
+  
+      fields.forEach(id => {
+        const input = document.getElementById(id);
+        if (input && !input.value.trim()) {
+          isValid = false;
+          input.classList.add('is-invalid');
+        } else {
+          input.classList.remove('is-invalid');
+        }
+      });
+  
+      if (!isValid) {
+        alert("Please fill out both email and password.");
+        return;
+      }
+  
+      // Get values
+      const email = document.getElementById('firstName').value.trim();
+      const password = document.getElementById('lastName').value.trim();
+  
+      // Encrypt password (Base64 for demo only)
+      const encodedPassword = btoa(password);
+  
+      // Save to localStorage
+      localStorage.setItem('firstName', email);
+      localStorage.setItem('lastName', encodedPassword);
+  
+      alert("Email ID updated successfully!\nEncrypted Password: " + encodedPassword);
+  
+      // Optionally clear the form after save
+      document.getElementById('firstName').value = '';
+      document.getElementById('lastName').value = '';
+    });
+  </script>
+  
+
+</body>
+</html>
