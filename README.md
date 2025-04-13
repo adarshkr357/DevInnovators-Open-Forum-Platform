@@ -1,8 +1,11 @@
-DevInnovators Open Forum Platform
+# DevInnovators Open Forum Platform
 
 A full-stack community forum platform built with HTML, CSS, JavaScript, and Express.js (Node.js). This project is designed for collaborative open-source development, simulating real-world industry practices to help contributors learn version control, web development fundamentals, and teamwork.
 
-Folder Structure
+## Repo Activity
+![Alt](https://repobeats.axiom.co/api/embed/d841d7b4df5aca61d15ed3132530813a50aa02da.svg "Repobeats analytics image")
+
+## Folder Structure
 
     open-forum-platform/
     ├── server.js                     # Main Express.js server file
@@ -76,25 +79,25 @@ Folder Structure
         ├── commentsSeed.js             # Seed initial comments
         └── categoriesSeed.js           # Seed initial categories
 
-Features
+## Features
 
-User Authentication (Login, Registration, JWT Sessions)
+- User Authentication (Login, Registration, JWT Sessions)
 
-Thread & Comments (CRUD operations for forum discussions)
+- Thread & Comments (CRUD operations for forum discussions)
 
-Categories & Tags (Organize forum topics efficiently)
+- Categories & Tags (Organize forum topics efficiently)
 
-Notifications System (Real-time updates for interactions)
+- Notifications System (Real-time updates for interactions)
 
-Admin Dashboard (User & Content Moderation)
+- Admin Dashboard (User & Content Moderation)
 
-Search Functionality (Find relevant discussions)
+- Search Functionality (Find relevant discussions)
 
-Profile Management (User settings, avatar upload, bio updates)
+- Profile Management (User settings, avatar upload, bio updates)
 
-Responsive UI (Modern front-end using Tailwind CSS)
+- Responsive UI (Modern front-end using Tailwind CSS)
 
-Setup Instructions
+## Setup Instructions
 
 1. Clone the Repository
 
@@ -122,18 +125,18 @@ Create a .env file and add necessary credentials:
 
         npm start
 
-Contributing
+## Contributing
 
 We welcome contributions from developers of all levels! To contribute:
 
-Fork the repository
+1. Fork the repository
 
-Create a new branch (feature-branch-name)
+2. Create a new branch (feature-branch-name)
 
-Commit your changes
+3. Commit your changes
 
-Push to your fork and submit a Pull Request
+4. Push to your fork and submit a Pull Request
 
-License
+## License
 
 This project is open-source and available under the MIT License.

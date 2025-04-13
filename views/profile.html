@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile | Open Forum</title>
+    <link rel="stylesheet" href="/DevInnovators-Open-Forum-Platform/public/css/profile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="forum-header">
+        <!-- Navigation would be included from a shared component -->
+        <nav>
+            <div class="logo">OpenForum</div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="categories.html">Categories</a>
+                <a href="profile.html" class="active">Profile</a>
+                <button id="theme-toggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="profile-container">
+        <div class="profile-header">
+            <div class="profile-avatar">
+                <img src="https://via.placeholder.com/150" alt="User avatar" id="user-avatar">
+                <button class="edit-avatar-btn" id="edit-avatar">
+                    <i class="fas fa-camera"></i>
+                </button>
+            </div>
+            <div class="profile-info">
+                <h1 id="user-name">Jane Doe</h1>
+                <h2 id="user-username">@janedoe</h2>
+                <p id="user-bio">Open source enthusiast | Web developer | Coffee lover</p>
+                <div class="profile-stats">
+                    <span><strong id="post-count">42</strong> posts</span>
+                    <span><strong id="comment-count">128</strong> comments</span>
+                    <span><strong id="follower-count">156</strong> followers</span>
+                    <span><strong id="following-count">87</strong> following</span>
+                </div>
+                <div class="profile-actions">
+                    <button class="btn btn-primary" id="follow-btn">Follow</button>
+                    <button class="btn btn-secondary" id="message-btn">Message</button>
+                    <button class="btn btn-edit" id="edit-profile">
+                        <i class="fas fa-edit"></i> Edit Profile
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="profile-content">
+            <div class="profile-tabs">
+                <button class="tab-btn active" data-tab="posts">Posts</button>
+                <button class="tab-btn" data-tab="comments">Comments</button>
+                <button class="tab-btn" data-tab="liked">Liked Posts</button>
+                <button class="tab-btn" data-tab="bookmarks">Bookmarks</button>
+                <button class="tab-btn" data-tab="settings">Settings</button>
+            </div>
+
+            <div class="tab-content active" id="posts-tab">
+                <h3>Recent Posts</h3>
+                <div class="posts-list" id="user-posts">
+                    <!-- Posts will be loaded dynamically -->
+                </div>
+            </div>
+
+            <div class="tab-content" id="comments-tab">
+                <h3>Recent Comments</h3>
+                <div class="comments-list" id="user-comments">
+                    <!-- Comments will be loaded dynamically -->
+                </div>
+            </div>
+
+            <div class="tab-content" id="liked-tab">
+                <h3>Liked Posts</h3>
+                <div class="liked-list" id="user-liked">
+                    <!-- Liked posts will be loaded dynamically -->
+                </div>
+            </div>
+
+            <div class="tab-content" id="bookmarks-tab">
+                <h3>Bookmarked Posts</h3>
+                <div class="bookmarks-list" id="user-bookmarks">
+                    <!-- Bookmarks will be loaded dynamically -->
+                </div>
+            </div>
+
+            <div class="tab-content" id="settings-tab">
+                <h3>Account Settings</h3>
+                <form class="settings-form" id="profile-settings">
+                    <div class="form-group">
+                        <label for="display-name">Display Name</label>
+                        <input type="text" id="display-name" value="Jane Doe">
+                    </div>
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" value="janedoe">
+                    </div>
+                    <div class="form-group">
+                        <label for="bio">Bio</label>
+                        <textarea id="bio">Open source enthusiast | Web developer | Coffee lover</textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" value="jane@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label>Theme Preference</label>
+                        <div class="theme-options">
+                            <label>
+                                <input type="radio" name="theme" value="light" checked> Light
+                            </label>
+                            <label>
+                                <input type="radio" name="theme" value="dark"> Dark
+                            </label>
+                            <label>
+                                <input type="radio" name="theme" value="system"> System
+                            </label>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                </form>
+                
+                <div class="account-actions">
+                    <h4>Account Actions</h4>
+                    <button class="btn btn-secondary" id="change-password">Change Password</button>
+                    <button class="btn btn-danger" id="delete-account">Delete Account</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="/DevInnovators-Open-Forum-Platform/public/js/profile/theme.js"></script>
+    <script src="/DevInnovators-Open-Forum-Platform/public/js/profile/main.js"></script>
+</body>
+</html>
