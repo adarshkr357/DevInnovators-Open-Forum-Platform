@@ -1,0 +1,24 @@
+{
+  "name": "devinnovators-open-forum-platform",
+  "version": "1.0.0",
+  "description": "A full-stack community forum platform built with HTML, CSS, JavaScript, and Express.js (Node.js). This project is designed for collaborative open source development, simulating real-world industry practices to help you learn version control, web development fundamentals, and teamwork.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DishaSharma2005/DevInnovators-Open-Forum-Platform.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DishaSharma2005/DevInnovators-Open-Forum-Platform/issues"
+  },
+  "homepage": "https://github.com/DishaSharma2005/DevInnovators-Open-Forum-Platform#readme",
+  "dependencies": {
+    "dotenv": "^16.5.0",
+    "pg": "^8.14.1"
+  }
+}
