@@ -146,3 +146,5 @@ dist
 >>>>>>> 5d20a3cf83bfee13da122b1e5107053820981dae
 =======
 >>>>>>> 5d20a3cf83bfee13da122b1e5107053820981dae
+#.gitignore
+.env
