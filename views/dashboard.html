@@ -1,1 +1,104 @@
-<button id="logoutButton">Logout</button>
+<button id="logoutButton">Logout</button><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="/DevInnovators-Open-Forum-Platform/public/css/Dashboard.css">
+    
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+</head>
+<body>
+    <div class="dashboard-container">
+        
+        <header>
+            <h1>DASHBOARD</h1>
+            <div class="profile">
+                <img src="profile-image.jpg" alt="Profile">
+            </div>
+        </header>
+
+        
+        <div class="search-actions">
+            <div class="search-box">
+                <input type="text" placeholder="Search popular topics, anything">
+                <div class="search-icons">
+                    <i class="fas fa-search"></i>
+                    <i class="fas fa-bell"></i>
+                    <i class="fas fa-comment"></i>
+                </div>
+            </div>
+            <div class="action-buttons">
+                <button class="new-thread">New Thread</button>
+                <button class="category">category</button>
+            </div>
+        </div>
+
+        
+        <div class="main-content">
+            
+            <div class="welcome-panel">
+                <h2>Welcome Back, User !</h2>
+                
+                <div class="info-cards">
+                   
+                    <div class="notifications-card">
+                        <h3>Notifications</h3>
+                        <div class="notification">
+                            <p>Your post views grew by more then 20k least week. See more detail in your insights dashboard.</p>
+                        </div>
+                        <div class="notification">
+                            <p>A new reply was added to a thread you follow.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="profile-views-card">
+                        <h3>Profile Views</h3>
+                        <div class="view-count">27,345</div>
+                        <div class="view-trend">+3% form last period</div>
+                    </div>
+                </div>
+                
+                <div class="popular-topics">
+                    <h3>Popular Topics</h3>
+                    <table>
+                        <tr>
+                            <th>Title</th>
+                            <th>Last Activity</th>
+                        </tr>
+                        <tr>
+                            <td>Best tools for Artificial Intelligence</td>
+                            <td>10hr</td>
+                        </tr>
+                        <tr>
+                            <td>How to land a tech Internship</td>
+                            <td>2hr</td>
+                        </tr>
+                        <tr>
+                            <td>React vs Vue -Which is better?</td>
+                            <td>0.5 hr</td>
+                        </tr>
+                        <tr>
+                            <td>Backend vs Frontend - skills toughness</td>
+                            <td>1 hr</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            
+            <div class="statistics-panel">
+                <h2>Form Statistics</h2>
+                
+                <div class="chart-container">
+                    <div id="area-chart"></div>
+                </div>
+                
+                <div class="chart-container">
+                    <div id="pie-chart"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
